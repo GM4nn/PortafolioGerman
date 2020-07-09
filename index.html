@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Portafolio - German C.</title>
+    <link rel="shorcut icon" href="img/profile.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <!-- Custom fonts for this template -->
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Plugin CSS -->
+    <link href="css/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          >Mi portafolio</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#portafolio"
+                >Portafolio</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#about"
+                >Acerca de mi</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#contact"
+                >Contacteme</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img
+          class="img-fluid mb-5 d-block mx-auto"
+          src="img/profile.png"
+          alt=""
+        />
+        <h1 class="text-uppercase mb-0">German Alejandro Castellanos Marin</h1>
+        <hr class="star-light" />
+        <h2 class="font-weight-light mb-0">
+          Desarrollador FrontEnd Y Desarrollador Backend
+        </h2>
+      </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio" id="portafolio">
+      <div class="container">
+    
+        <h2 class="text-center text-uppercase text-secondary mb-0">
+          Portafolio
+        </h2>
+        <hr class="star-dark mb-5" />
+        <div class="row justify-content-center">
+
+          <div class="col-md-6 col-lg-4" v-for="(project,index) in projects">
+            
+            <a class="portfolio-item d-block mx-auto" @click="LlamarModal(index)" data-toggle="modal" href="#ModalProjects">
+              <span class="FuenteNumeroProject">#$$index+1$$</span>
+              
+              <div
+                class="portfolio-item-caption d-flex position-absolute h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content my-auto w-100 text-center text-white"
+                >
+                  <i class="fas fa-search-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/imagenFondoProjects.png" alt=""/>
+            </a>
+          </div>
+
+          <div class="modal fade" id="ModalProjects" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+           
+                <div class="modal-body my-4">
+                  
+                    <div class="portfolio-modal-dialog bg-white">
+
+                        <div class="container text-center">
+                          <div class="row">
+                            <div class="col-12">
+                              <h2 class="text-secondary text-uppercase mb-0">
+                                $$projects[indexProject].nombre$$
+                              </h2>
+                              <hr class="star-dark mb-5" />
+                                <span v-html="projects[indexProject].contenido"></span>
+                              <p class="mb-5 mt-4">
+                                $$projects[indexProject].descripcion$$
+                              </p>
+                              <a
+                                data-dismiss="modal"
+                                class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
+                                href="#"
+                              >
+                                <i class="fa fa-close"></i>
+                                Cerrar Proyecto</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section class="bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Acerca de mi</h2>
+        <hr class="star-light mb-5" />
+        <div class="row justify-content-center">
+     
+
+          <div class="col-lg-5 text-center">
+            <h4 style="font-weight:900;">Descripcion:</h4>
+            <p class="lead">
+              Persona con muchas capacidades como aprendizaje continuo,
+              Diferentes maneras de solucionar un problema planteado,
+              Pensamiento logico intermedio en base a programacion.
+              <strong style="font-weight:900;"
+                >Cursando Ingenieria en Sistemas Computacionales</strong
+              >
+            </p>
+          </div>
+
+          <div class="col-lg-5 text-center">
+            <h4  style="font-weight:900;">Destrezas:</h4>
+            <ul class="px-0" style="list-style-type: none;">
+              <li>Manejo de disparadores(triggers) en base de datos.</li>
+              <li>Gran Manejo y conocimiento del framework django.</li>
+              <li>Capacidad para aprender nuevos lenguajes de programacion.</li>
+              <li>Perseverante ante la solucion de cualquier problema.</li>
+              <li>
+                Aplicacion de la logica y diferentes soluciones entre los
+                distintos algoritmos en el ambito de la programacion.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">
+          Contacteme
+        </h2>
+        <hr class="star-dark mb-5" />
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+            <h4>Numero de Telefono:</h4>
+            <div class="control-group">
+              <div
+                class="form-group floating-label-form-group controls mb-0 pb-2"
+              >
+                <label>Numero de Telefono</label>
+                <p>+52 9621127172</p>
+              </div>
+            </div>
+            <h4 class="mt-3">Email Personal:</h4>
+            <div class="control-group">
+              <div
+                class="form-group floating-label-form-group controls mb-0 pb-2"
+              >
+                <label>Email Personal:</label>
+                <p>germal150@hotmail.com</p>
+              </div>
+            </div>
+            <h4 class="mt-3">Link perfil Linkedin</h4>
+
+            <div class="control-group">
+              <div
+                class="form-group floating-label-form-group controls mb-0 pb-2"
+              >
+                <label>Link perfil Linkedin</label>
+                <p>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/germ%C3%A1n-castellanos-9649511a6/"
+                    >https://www.linkedin.com/in/germ%C3%A1n-castellanos-9649511a6/</a
+                  >
+                </p>
+              </div>
+
+              <h4 class="mt-3">CV</h4>
+              <div class="control-group">
+                <div
+                  class="form-group floating-label-form-group controls mb-0 pb-2"
+                >
+                  <label>CV</label>
+                  <p><a href="CV/CV GERMAN YO.pdf">Click aqui para ver CV</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <h4 class="text-uppercase mb-4">Optimizando procesos constantemente</h4>
+            <p class="lead mb-0">
+              German Alejandro Castellanos Marin - <br />
+              Cursando Ingeniera en Sistemas Computacionales
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script>
+
+
+      const app = new Vue({
+        delimiters:['$$','$$'],
+        el: "#portafolio",
+        data:{
+          hola:"hola mundo",
+          indexProject:0,
+          projects:[
+            {
+              nombre:"Banco De Herramientas",
+              contenido:"<video ' controls src='img/video2.mp4' style='width: 100%;'></video>",
+              descripcion:
+              `El banco de herramientas tenia la problematica de no tener un
+              control adecuado de sus prestamos y movimientos de insumos, al
+              saber esto, se realizo un software que tuviera un total control
+              de los movimientos de cada insumo sea por instructor o ficha`
+            },
+            {
+              nombre:"Tu nevera",
+              contenido:"<video style='width: 100%;' controls> <source src='https://drive.google.com/uc?export=download&id=1lZkyJVZOT9Z1yMEHA8JZMLXEkYcLhsdM' type='video/mp4'>  </video>",
+              descripcion:
+              `Este aplicativo tiene como objetivo principal el generar
+              recetas a partir de ingredientes disponibles por el usuario
+              ademas de tener un dinamismo y un facil uso amigable con el
+              usuario al hacer esto`
+            },
+            {
+              nombre:"Hosteria Mi Chozita",
+              contenido:`
+              <div class='row justify-content-center'> 
+                <div class='col-auto'>
+                  <a target='_blank' href='http://hosteriamichozita.com.co/'>
+                    <img class='mx-auto' src='img/logosProyectos/logo_chozita_sin_fondo.png'>
+                    <br>
+                    Click aqui para ver este proyecto
+                    </a>
+                </div>
+              </div>    
+              `,
+              descripcion:
+              `2 piscinas para adultos, 2 piscinas para niños, turco, jacuzzi, billares, ping pong, vóley playa, 
+              turco, sendero ecológico, con acceso al rio, discoteca bar, restaurante, zona de hamacas, a solo 5 
+              minutos del parque principal del municipio, entre nuestros servicios encontrará: eventos empresariales,
+               matrimonios y convenciones, amplias zonas comunes en las cuales hemos atendido grupos hasta de 500 personas.
+               En nuestra sede encontrará usted alojamiento en acomodación para pareja, habitaciones familiares con 
+               ventilador o aire acondicionado, 29 habitaciones con la mejor tarifa del occidente antioqueño y un servicio
+               idóneo para que la visita a este lugar sea de su total agrado.`
+            },
+            {
+              nombre:"BateriasHD",
+              contenido:`
+              <div class='row justify-content-center'> 
+                <div class='col-auto'>
+                  <a target='_blank' href='http://bateriashd.com/'>
+                    <img src='img/logosProyectos/logo_bateriasHD.png'>
+                    <br>
+                    Click aqui para ver este proyecto
+                    </a>
+                </div>
+              </div>    
+              `,
+              descripcion:
+              `Baterías HD es una empresa enfocada al 100% en la venta de baterías a domicilio para toda clase de vehículo, 
+              donde ofrecemos principalmente un servicio con calidad; manejamos las marcas más representativas del mercado y 
+              contamos con alta experiencia`
+            }
+          ]
+        },
+        methods:{
+          LlamarModal(recipient){
+            this.indexProject = recipient
+          }
+        }
+        
+      });
+    </script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+  </body>
+</html>
